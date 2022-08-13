@@ -1,0 +1,22 @@
+[package]
+name = "centauri-finder"
+version = "1.1.0"
+authors = ["Jose Sosa <jose.skedar@gmail.com>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+schemars = "0.8"
+near-sdk = "4.0.0"
+near-contract-standards = "4.0.0"
+uint = "0.9.3"
+
+[profile.release]
+codegen-units=1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
